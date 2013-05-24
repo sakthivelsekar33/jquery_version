@@ -1,0 +1,35 @@
+<%= javascript_include_tag "user_details" %>
+<%= stylesheet_link_tag "jquery-ui"%>
+<%= stylesheet_link_tag "jquery-ui-all" %>
+<%= stylesheet_link_tag "jquery-multiselect" %>
+<%= stylesheet_link_tag "jquery-multiselect-filter" %>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br />
+    <%= f.select :place, [['TN',1],['KR',2],['MP',3],['AP',4]] %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

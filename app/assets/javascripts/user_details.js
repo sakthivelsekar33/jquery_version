@@ -9,8 +9,8 @@
 
 //This is multiselect plugin function calling and this works on jquery version 1.7.1
 var jq171 = jQuery.noConflict();
-jQuery(document).ready(function(){
-  jQuery("#user_place").multiselect().multiselectfilter();
+jq171(document).ready(function(){
+  jq171("#user_place").multiselect().multiselectfilter();
 });
 
 //This is time picker plugin function calling and this works on jquery version 1.9.1
